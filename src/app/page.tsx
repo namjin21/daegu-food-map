@@ -1,12 +1,12 @@
-import { getRestaurants } from "@/actions/getRestaurants";
 import Map from "@/components/Map";
 import SidePanel from "@/components/SidePanel";
 
 export default async function Home() {
-  const restaurants = await getRestaurants();
+  const res = await fetch(`${process.env.DEV_URL}/api/restaurants?area=중구`);
+  const restaurants = await res.json();
   return (
     <div className="flex h-full">
-      <SidePanel restaurants={restaurants.data} />
+      <SidePanel restaurants={restaurants} />
       <Map />
     </div>
   );
