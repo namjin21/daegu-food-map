@@ -7,13 +7,10 @@ interface RestaurantsContainerProps {
 
 function RestaurantsContainer({ restaurants }: RestaurantsContainerProps) {
   return (
-    <div className="h-full flex flex-col">
+    <div className="h-full flex flex-col overflow-y-scroll">
       <ul>
-        {restaurants.map((restaurant) => (
-          <RestaurantCard
-            key={restaurant.OPENDATA_ID}
-            restaurant={restaurant}
-          />
+        {restaurants.map((restaurant, index) => (
+          <RestaurantCard key={index} restaurant={restaurant} />
         ))}
       </ul>
     </div>

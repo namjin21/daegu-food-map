@@ -4,7 +4,7 @@ export declare global {
   }
 }
 
-export interface Restaurant {
+export interface RawRestaurant {
   cnt: string;
   OPENDATA_ID: string;
   GNG_CS: string;
@@ -24,4 +24,24 @@ export interface Restaurant {
   SMPL_DESC: string;
   SBW: string;
   BUS: string;
+}
+
+export interface Restaurant {
+  id: string;
+  name: string;
+  foodType: string;
+  address: string;
+  hours: string;
+  phone: string;
+  description: string;
+  seat: string;
+  parking: string;
+  menu: string[];
+  website: string;
+  bookingAvailability: string;
+  subwayRoute: string;
+  busRoute: string;
+  isBreakfast: boolean;
+  isDessert: boolean;
+  isChildFacility: boolean;
 }

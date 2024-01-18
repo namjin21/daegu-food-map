@@ -27,7 +27,7 @@ function Map() {
   }, []);
 
   return (
-    <div className="w-full sm:w-2/3 h-full">
+    <div className="h-full">
       <div
         id="map"
         style={{ width: "100%", height: "100%", position: "fixed" }}
