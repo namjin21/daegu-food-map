@@ -2,7 +2,7 @@ import Map from "@/components/Map";
 import SidePanel from "@/components/SidePanel";
 
 export default async function Home() {
-  const res = await fetch(`${process.env.DEV_URL}/api/restaurants?area=중구`);
+  const res = await fetch(`${process.env.URL}/api/restaurants?area=중구`);
   const restaurants = await res.json();
   return (
     <div className="flex h-full">
