@@ -1,5 +1,7 @@
+import { Restaurant } from "@/types";
+
 interface RestaurantCardProps {
-  restaurant: any;
+  restaurant: Restaurant;
 }
 
 function RestaurantCard({ restaurant }: RestaurantCardProps) {

@@ -1,23 +1,32 @@
-import { useState } from "react";
+import Select from "react-select";
 
-function AreaSelect() {
-  const [filter, setFilter] = useState("");
+import { AreaOption, areaOptions } from "@/data/areaOptions";
 
-  function handleChangeFilter(e: React.ChangeEvent<HTMLSelectElement>) {
-    setFilter(e.target.value);
-  }
+interface AreaSelectProps {
+  value?: AreaOption;
+  onChange: (value: AreaOption) => void;
+}
 
+function AreaSelect({ value, onChange }: AreaSelectProps) {
   return (
     <div>
-      <select
-        name="filterArea"
-        id=""
-        value={filter}
-        onChange={handleChangeFilter}
-      >
-        <option value="수성구">수성구</option>
-        <option value="중구">중구</option>
-      </select>
+      <Select
+        defaultValue={areaOptions[0]}
+        options={areaOptions}
+        value={value}
+        onChange={(value) => onChange(value as AreaOption)}
+        className="m-2"
+        theme={(theme) => ({
+          ...theme,
+          borderRadius: 5,
+          colors: {
+            ...theme.colors,
+            primary: "#216121",
+            primary25: "#d7f1de",
+            primary50: "#bcd6c2",
+          },
+        })}
+      />
     </div>
   );
 }

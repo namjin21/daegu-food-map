@@ -1,7 +1,8 @@
+import { Restaurant } from "@/types";
 import RestaurantCard from "./RestaurantCard";
 
 interface RestaurantsContainerProps {
-  restaurants: any[];
+  restaurants: Restaurant[];
 }
 
 function RestaurantsContainer({ restaurants }: RestaurantsContainerProps) {
